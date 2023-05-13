@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <title>Contact</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #355c7d, #6c5b7b, #c06c84);
+      animation: gradientAnimation 10s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .animated-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(45deg, #00b4db, #0083b0);
+      animation: animatedBackground 5s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes animatedBackground {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 5px 0;
+      color: #555;
+      font-family: 'Arial', sans-serif;
+    }
+
+    a {
+      color: #337ab7;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <a href="{% url 'about' %}">Back to about us</a>
+    <div class="animated-bg"></div>
+    <img src="{% static 'accounts/images/a.jpg' %}" class="profile-image">
+    <h1>Ajay Neupane</h1>
+    <br>
+    <p>Email: <a href="mailto:ajayneupane8@gmail.com">ajayneupane8@gmail.com</a></p>
+    <p>Mobile Number: <a href="tel:9811161924">9811161924</a></p>
+  </div>
+</body>
+
+</html>
